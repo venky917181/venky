@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkateswara Chowdary Daddala - Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            font-weight: bold;
+            border: 4px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .education-item, .license-item, .skill-category {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover, .license-item:hover, .skill-category:hover {
+            background: #e8f4f8;
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
+        }
+
+        .education-item h3, .license-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .institution, .issuer {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .date, .status {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            background: white;
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .skill-list li:hover {
+            background: #667eea;
+            color: white;
+            border-color: #764ba2;
+            transform: scale(1.05);
+        }
+
+        .skill-badge {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: scale(1.05);
+        }
+
+        .achievement-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 50px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 30px 20px;
+            }
+            
+            .section {
+                padding: 25px 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="animate-on-scroll">
+            <div class="profile-img">VCD</div>
+            <h1>Venkateswara Chowdary Daddala</h1>
+            <p class="subtitle">ServiceNow Developer | Certified Application Developer | ITSM Expert</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>venkateswarachowdarydaddala@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>0470254891</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>2 First Street, Clayton South 3169, Melbourne, VIC</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <span>linkedin.com/in/venkateswara-chowdary-daddala</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="section animate-on-scroll">
+            <h2><span class="icon">👨‍💼</span>Professional Summary</h2>
+            <div class="education-item">
+                <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                    Experienced ServiceNow Developer with 4+ years of comprehensive expertise in the ServiceNow platform ecosystem. 
+                    Currently specializing in custom application development and Service Portal solutions at eHealth Queensland. 
+                    Proven track record in designing, developing, and implementing complex ServiceNow solutions including ITSM, HRSD, 
+                    and CMDB modules. Expert in platform administration, workflow automation, scripting, and API integrations. 
+                    My recent recognition as a Jury Winner at the Deloitte X ServiceNow Appathon demonstrates my ability to deliver 
+                    innovative solutions in competitive environments. With dual certifications as both a Certified System Administrator 
+                    and Certified Application Developer, combined with a Master's in Data Science, I bring a unique blend of technical 
+                    development expertise and data-driven insights to optimize IT service delivery and business process automation.
+                </p>
+            </div>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2><span class="icon">💼</span>Professional Experience</h2>
+            
+            <div class="education-item">
+                <h3>ServiceNow Application Specialist</h3>
+                <div class="institution">eHealth Queensland</div>
+                <div class="date">April 2025 - Present (3 months)</div>
+                <div class="description">
+                    Currently working as a ServiceNow Application Specialist in the healthcare sector, focusing on developing and maintaining 
+                    ServiceNow custom applications and Service Portal solutions. Responsible for creating tailored healthcare IT service 
+                    management workflows, custom application development, and enhancing user experience through advanced Service Portal 
+                    customizations. Working closely with healthcare teams to automate critical processes and improve service delivery efficiency.
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>ServiceNow Consultant</h3>
+                <div class="institution">Tecworkz Australia Pty Ltd</div>
+                <div class="date">June 2023 - April 2025 (1 year 11 months)</div>
+                <div class="description">
+                    Specialized in maintaining and supporting the ServiceNow platform for seamless IT Service Management operations. 
+                    Key responsibilities included platform maintenance & support, incident resolution, problem management, user assistance, 
+                    service request handling, monitoring & reporting, and documentation & knowledge sharing.
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>NextGen Externship - ServiceNow</h3>
+                <div class="institution">ServiceNow</div>
+                <div class="date">March 2024 - June 2024 (4 months)</div>
+                <div class="description">
+                    Gained hands-on experience in ServiceNow platform development, workflow automation, and collaborative learning. 
+                    Worked on real-world projects focusing on ITSM, HRSD, and custom application development.
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>Infra Developer - ServiceNow</h3>
+                <div class="institution">Cognizant</div>
+                <div class="date">July 2021 - October 2022 (1 year 4 months)</div>
+                <div class="description">
+                    Designed, developed, and implemented ServiceNow modules including Incident, Problem, Change, and Service Catalog. 
+                    Built custom applications, developed integrations using REST/SOAP APIs, and implemented automation solutions.
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>ServiceNow Intern</h3>
+                <div class="institution">Cognizant</div>
+                <div class="date">March 2021 - July 2021 (5 months)</div>
+                <div class="description">
+                    Gained foundational experience in ServiceNow platform implementation and optimization. Completed CSA and CAD certifications 
+                    while contributing to business rules, UI policies, scripts, and workflow automation.
+                </div>
+            </div>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2><span class="icon">🎓</span>Education</h2>
+            
+            <div class="education-item">
+                <h3>Master's Degree in Data Science</h3>
+                <div class="institution">La Trobe University</div>
+                <div class="date">February 2023 - October 2024</div>
+                <div class="description">
+                    Advanced studies in data science, analytics, and business intelligence, providing expertise in data-driven decision making 
+                    and statistical analysis.
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>Bachelor of Technology - Information Technology</h3>
+                <div class="institution">Sree Vidyanikethan Education Trust (SVET), Tirupati</div>
+                <div class="date">2017 - June 2021</div>
+                <div class="description">
+                    Comprehensive undergraduate program in Information Technology covering software development, systems analysis, 
+                    and technology management.
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>Intermediate Education</h3>
+                <div class="institution">NRI Junior College</div>
+                <div class="date">July 2014 - May 2016</div>
+                <div class="description">
+                    Pre-university education with focus on science and mathematics fundamentals.
+                </div>
+            </div>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2><span class="icon">📜</span>Licenses & Certifications</h2>
+            
+            <div class="license-item">
+                <h3>ServiceNow Certified System Administrator</h3>
+                <div class="issuer">ServiceNow</div>
+                <div class="date">Professional Certification</div>
+                <div class="status">Status: Active</div>
+                <div class="description">
+                    Comprehensive certification demonstrating expertise in ServiceNow platform administration, including user management, 
+                    data management, and system configuration.
+                </div>
+            </div>
+
+            <div class="license-item">
+                <h3>ServiceNow Certified Application Developer</h3>
+                <div class="issuer">ServiceNow</div>
+                <div class="date">Professional Certification</div>
+                <div class="status">Status: Active</div>
+                <div class="description">
+                    Advanced certification validating skills in ServiceNow application development, custom scripting, 
+                    and platform customization capabilities.
+                </div>
+            </div>
+
+            <div class="license-item">
+                <h3>Microsoft Certified: Azure Fundamentals</h3>
+                <div class="issuer">Microsoft</div>
+                <div class="date">Cloud Computing Certification</div>
+                <div class="status">Status: Active</div>
+                <div class="description">
+                    Foundational certification in Microsoft Azure cloud services, demonstrating understanding of cloud concepts, 
+                    core Azure services, and Azure management tools.
+                </div>
+            </div>
+
+            <div class="license-item">
+                <h3>2024 Global Event Volunteer</h3>
+                <div class="issuer">Professional Recognition</div>
+                <div class="date">2024</div>
+                <div class="status">Community Contribution</div>
+                <div class="description">
+                    Recognition for volunteer contributions to global technology events, demonstrating commitment to 
+                    professional community engagement.
+                </div>
+            </div>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2><span class="icon">⚡</span>Skills & Expertise</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>ServiceNow Expertise</h3>
+                    <ul class="skill-list">
+                        <li>ServiceNow Development <span class="skill-badge">Expert</span></li>
+                        <li>IT Service Management <span class="skill-badge">Expert</span></li>
+                        <li>ITSM Modules <span class="skill-badge">Advanced</span></li>
+                        <li>HRSD (HR Service Delivery) <span class="skill-badge">Advanced</span></li>
+                        <li>CMDB (Configuration Management) <span class="skill-badge">Advanced</span></li>
+                        <li>Incident Management <span class="skill-badge">Expert</span></li>
+                        <li>Problem Management <span class="skill-badge">Expert</span></li>
+                        <li>Change Management <span class="skill-badge">Advanced</span></li>
+                        <li>Service Catalog <span class="skill-badge">Advanced</span></li>
+                        <li>Service Portal Customization <span class="skill-badge">Advanced</span></li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>Microsoft Excel <span class="skill-badge">Expert</span></li>
+                        <li>REST/SOAP APIs <span class="skill-badge">Advanced</span></li>
+                        <li>JavaScript Scripting <span class="skill-badge">Advanced</span></li>
+                        <li>Workflow Automation <span class="skill-badge">Expert</span></li>
+                        <li>Business Rules <span class="skill-badge">Advanced</span></li>
+                        <li>UI Policies <span class="skill-badge">Advanced</span></li>
+                        <li>Data Science <span class="skill-badge">Intermediate</span></li>
+                        <li>Azure Cloud Fundamentals <span class="skill-badge">Intermediate</span></li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <ul class="skill-list">
+                        <li>Platform Administration <span class="skill-badge">Expert</span></li>
+                        <li>System Integration <span class="skill-badge">Advanced</span></li>
+                        <li>Documentation & Training <span class="skill-badge">Advanced</span></li>
+                        <li>Incident Resolution <span class="skill-badge">Expert</span></li>
+                        <li>Process Optimization <span class="skill-badge">Advanced</span></li>
+                        <li>Team Collaboration <span class="skill-badge">Expert</span></li>
+                        <li>Client Consultation <span class="skill-badge">Advanced</span></li>
+                        <li>Project Management <span class="skill-badge">Intermediate</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2><span class="icon">🏆</span>Key Achievements</h2>
+            
+            <div class="achievements">
+                <div class="achievement-card">
+                    <div class="achievement-number">4+</div>
+                    <div>Years of Experience</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">3</div>
+                    <div>Professional Certifications</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">🏆</div>
+                    <div>Deloitte X ServiceNow Appathon Jury Winner</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">100%</div>
+                    <div>Platform Uptime Focus</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <div class="license-item">
+                    <h3>🏆 Jury Winner - Deloitte X ServiceNow Appathon</h3>
+                    <div class="issuer">Deloitte & ServiceNow</div>
+                    <div class="date">Professional Recognition</div>
+                    <div class="status">Award Winner</div>
+                    <div class="description">
+                        Recognition for innovative ServiceNow application development and problem-solving skills in a competitive 
+                        professional environment, demonstrating ability to apply creative solutions to real-world business challenges.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section animate-on-scroll">
+            <h2 style="color: white; border-bottom: 3px solid white;">Let's Connect</h2>
+            <p style="font-size: 1.2em; margin-bottom: 30px;">
+                Ready to discuss opportunities? I'm always open to connecting with like-minded professionals.
+            </p>
+            <a href="mailto:venkateswarachowdarydaddala@gmail.com" class="cta-button">Send Email</a>
+            <a href="https://linkedin.com/in/venkateswara-chowdary-daddala" class="cta-button">View LinkedIn</a>
+            <a href="tel:0470254891" class="cta-button">Call Me</a>
+        </section>
+    </div>
+
+    <script>
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.skill-list li').forEach(skill => {
+            skill.addEventListener('click', function() {
+                this.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+
+        // Smooth scrolling for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
